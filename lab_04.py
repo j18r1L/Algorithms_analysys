@@ -1,0 +1,17 @@
+
+def vstavki(array):
+	for i in range(2, N):					(0)
+		if a[i - 1] > a[i]:					(1)
+			x = a[i]						(2)
+			left = 1						(3)
+			right = N - 1					(4)
+			while left < right:				(5)
+				difference = left + right	(6)
+				mid = difference % 2		(7)
+				if a[mid] < x:				(8)
+					left = mid + 1			(9)
+				if a[mid] >= x:				(10)
+					right = mid - 1			(11)
+			for j in range(i - 1, left, -1):(12)
+				a[j + 1] = a[j]				(13)
+			a[left] = x						(14)
