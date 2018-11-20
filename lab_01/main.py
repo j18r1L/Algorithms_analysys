@@ -7,21 +7,21 @@ def main():
 	if len(word1) < len(word2):
 		word1, word2 = word2, word1
 	print()
-	#Вывод Левенштейна
+
 	result_mtr = levenshtein(word1, word2)
 	print('result levenshtein: ', result_mtr, '\n')
 
-	#Вывод дамерау
+
 	mtr = demerau_levenshtein(word1, word2)
 	print('demerau_levenshtein: ', mtr, '\n')
 
-	#Вывод рекурсии
+
 	start = time.time()
 	result_rec = recursion(word1, word2)
 	end = time.time()
 	print('time recurs: ', end - start)
 	print('recurs: ', result_rec, '\n')
-	#tests.test()
+	tests.test()
 
 def enter():
 	symbol = str(input('Enter word: '))
@@ -61,10 +61,6 @@ def demerau_levenshtein(word1, word2):
 	start = time.time()
 	for i in range(1, l1):
 		for j in range(1, l2):
-			if word1[i] == word2[j]:
-				flagmatch = 0
-			else:
-				flagmatch = 1
 			if (i > 1) and (j > 1) and (word1[i] == word2[j - 1]) and (word1[i - 1] == word2[j]) and (word1[i] == word2[j]):
 				mtr[i][j] = min(mtr[i - 1][j] + 1, mtr[i][j - 1] + 1, mtr[i - 1][j - 1], mtr[i - 2][j - 2] + 1)
 			elif (i > 1) and (j > 1) and (word1[i] == word2[j - 1]) and (word1[i - 1] == word2[j]) and (word1[i] != word2[j]):

@@ -6,7 +6,8 @@ import main
 def test():
 	word = ''.join(random.choice(string.ascii_lowercase) for x in range(100))
 	word.split()
-	
+	print(word)
+	'''
 	word1 = ['g', 'k']
 	word2 = ['g', 'k']
 	f1 = open('out1.txt', 'w')
@@ -42,6 +43,7 @@ def test():
 	
 	f1.close()
 	f2.close()
+	'''
 
 if __name__ == '__main__':
 	main()
