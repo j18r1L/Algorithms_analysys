@@ -1,5 +1,6 @@
 import time
 import tests
+import PIL
 
 def main():
 	word1 = enter()
