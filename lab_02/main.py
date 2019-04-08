@@ -3,8 +3,8 @@ import time
 def main():
 	#a = [[i for i in range(3)] for j in range(3)]
 	#b = [[i for i in range(3)] for j in range(3)]
-	a = [[1 ,2, 3], [4, 5, 6], [7, 8, 9]]
-	b = [[1 ,2, 3], [4, 5, 6], [7, 8, 9]]
+	a = [[0, 1 ,2, 3, 4], [1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]]
+	b = [[0, -1, -2, -3, -4], [1, 0, -1, -2, -3], [2, 1, 0, -1, -2], [3, 2, 1, 0, -1], [4, 3, 2, 1, 0]]
 	#start1 = time.time()
 	print(multiplication(a, b))
 	#end1 = time.time()
@@ -74,15 +74,17 @@ def grapefull_vineyard(a, b):
 	result = [[0 for i in range(lenght_c)] for j in range(lenght_a)]
 	row = [0 for i in range(lenght_a)]
 	column = [0 for i in range(lenght_c)]
-
+		
+	print(lenght_a, d)
+		
 	for i in range(lenght_a):
 		for j in range (d):
 			row[i] += a[i][2 * j] * a[i][2 * j + 1]
-
+	print(row)
 	for i in range(lenght_c):
 		for j in range(d):
 			column[i] += b[2 * j][i] * b[2 * j + 1][i]
-
+	print(column)
 	for i in range(lenght_a):
 		for j in range(lenght_c):
 			result[i][j] = -row[i] - column[j]
